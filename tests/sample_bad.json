@@ -1,0 +1,38 @@
+{
+  "project": {
+    "name": "快产短视频项目",
+    "reference_board": 1,
+    "negative_list": [],
+    "acceptance_sample_passed": false
+  },
+  "consistency": {
+    "character_cards": [
+      {"name": "主角", "traits": "好看", "habit_actions": "", "catchphrases": "", "turning_point": ""}
+    ],
+    "asset_library": [
+      {"name": "主角-服装", "shot_scales": ["全"], "three_view": false, "in_library": false}
+    ]
+  },
+  "volume": {
+    "key_shot_min_candidates": 5,
+    "normal_shot_min_candidates": 3,
+    "enforced": false
+  },
+  "timebox": {
+    "per_shot_minutes": 0,
+    "max_attempts": 0,
+    "on_timeout": "继续抽到出为止"
+  },
+  "assets": {
+    "bet_on_workflow": true,
+    "migratable_assets": []
+  },
+  "investment": {
+    "meme_hours_weekly": 1,
+    "tool_hours_weekly": 5
+  },
+  "roles": [
+    {"title": "导演", "role_type": "decision", "taste_weight": 0.30, "knows_cinematography": true},
+    {"title": "抽卡师", "role_type": "execution", "taste_weight": 0.20, "knows_cinematography": false}
+  ]
+}

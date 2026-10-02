@@ -1,0 +1,43 @@
+{
+  "project": {
+    "name": "200场中剧《示例》",
+    "reference_board": 4,
+    "negative_list": ["不用饱和滤镜", "不做匀速推拉+慢放的AI味运镜", "不30秒内不出人物", "不旁播式念稿"],
+    "acceptance_sample_passed": true
+  },
+  "consistency": {
+    "character_cards": [
+      {"name": "林晚", "traits": "冷静、戒备、嘴硬心软", "habit_actions": "紧张时摸耳后", "catchphrases": "再说一遍？", "turning_point": "第8幕从戒备转为信任"},
+      {"name": "老周", "traits": "圆滑、怕事、藏得住事", "habit_actions": "说话前先看门口", "catchphrases": "这事儿啊……", "turning_point": "第12幕为林晚挡事，露出底线"}
+    ],
+    "asset_library": [
+      {"name": "林晚-常服", "shot_scales": ["远", "全", "中", "近", "特"], "three_view": true, "in_library": true},
+      {"name": "林晚-战损装（第8幕启用）", "shot_scales": ["远", "全", "中", "近", "特"], "three_view": true, "in_library": true},
+      {"name": "场景-主屋", "shot_scales": ["远", "全", "中"], "three_view": true, "in_library": true}
+    ]
+  },
+  "volume": {
+    "key_shot_min_candidates": 120,
+    "normal_shot_min_candidates": 20,
+    "enforced": true
+  },
+  "timebox": {
+    "per_shot_minutes": 30,
+    "max_attempts": 20,
+    "on_timeout": "换方案：改分镜或改景别，模型做不了60秒长镜头就用3个中近景组替代"
+  },
+  "assets": {
+    "bet_on_workflow": false,
+    "migratable_assets": ["角色设定卡", "服装场景资产库", "风格参考板", "验收标准"]
+  },
+  "investment": {
+    "meme_hours_weekly": 6,
+    "tool_hours_weekly": 1
+  },
+  "roles": [
+    {"title": "AI导演", "role_type": "decision", "taste_weight": 0.85, "knows_cinematography": true},
+    {"title": "品控", "role_type": "decision", "taste_weight": 0.75, "knows_cinematography": true},
+    {"title": "生成师/抽卡师", "role_type": "execution", "taste_weight": 0.30, "knows_cinematography": true},
+    {"title": "资产管理员", "role_type": "execution", "taste_weight": 0.20, "knows_cinematography": true}
+  ]
+}

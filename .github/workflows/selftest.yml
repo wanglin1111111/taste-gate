@@ -1,0 +1,21 @@
+name: selftest
+on: [push, pull_request, workflow_dispatch]
+
+jobs:
+  selftest:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Unit tests (正反向 + 退出码)
+        run: python tests/test_validate.py
+      - name: Good sample must pass
+        run: python scripts/validate.py tests/sample_good.json
+      - name: Bad sample must fail
+        run: |
+          set +e
+          python scripts/validate.py tests/sample_bad.json
+          code=$?
+          test "$code" -eq 1
